@@ -1,0 +1,33 @@
+/* R19: the complete animated process is the canvas; controls and copy sit on it. */
+.eng-page :is(#scope,#gn-field-food){height:auto;min-height:var(--eng-review-space);min-block-size:var(--eng-review-space)}
+.eng-page :is(#scope,#gn-field-food)>.wrap{width:100%;max-width:1440px}
+.eng-page :is(#scope,#gn-field-food) .scope-row[open]{padding-top:16px}
+.eng-page :is(#scope,#gn-field-food) .eng-scope-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:0;position:relative;isolation:isolate;min-height:clamp(400px,52vw,590px);background:#f3f0e8;border:1px solid #ccd4c5;border-radius:8px;overflow:hidden}
+.eng-page :is(#scope,#gn-field-food) .scope-figure{grid-area:1/1;margin:0;align-self:stretch;position:relative;min-width:0;width:100%;display:flex;align-items:flex-start;justify-content:center;padding:38px 18px 160px;background:#f3f0e8}
+.eng-page :is(#scope,#gn-field-food) .process-wireframe{width:100%;height:auto;max-height:none;aspect-ratio:3/1;object-fit:contain;display:block}
+.eng-page :is(#scope,#gn-field-food) .wire-stages{position:absolute;inset:0 auto auto 0;display:flex;flex-wrap:wrap;border:0;background:transparent;padding:12px 20px;max-width:78%;font-size:11px}
+.eng-page :is(#scope,#gn-field-food) .wire-zoom{position:absolute;inset:10px 12px auto auto;max-width:21%;background:#f3f0e8e6;border:1px solid #a8b5a0;border-radius:4px;font-size:11px;min-height:40px}
+.eng-page :is(#scope,#gn-field-food) .scope-body{grid-area:1/1;z-index:1;align-self:end;display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.8fr);gap:24px;align-items:center;width:100%;padding:24px 28px;background:linear-gradient(0deg,#f3f0e8 0%,#f3f0e8f5 72%,#f3f0e8d9 100%);border-top:1px solid #cbd2c4;min-width:0}
+.eng-page :is(#scope,#gn-field-food) .scope-body>.eng-detail-select{display:block;grid-column:1;grid-row:1;margin:0;width:100%;font-size:15px;min-height:48px;padding:12px 35px 12px 14px;background-color:#fffdf7;border:1px solid #75886b;border-radius:5px;color:#17342c}
+.eng-page :is(#scope,#gn-field-food) .scope-body>div:not(.eng-juice-controls){grid-column:2;grid-row:1;padding:0;min-height:0;background:transparent}
+.eng-page :is(#scope,#gn-field-food) .scope-body p,.eng-page :is(#scope,#gn-field-food) .scope-body .eng-fit-panel>span{font-size:clamp(15px,1.4vw,18px);line-height:1.55;margin:0;color:#243d2d}
+.eng-page :is(#scope,#gn-field-food) .eng-juice-controls{display:none}
+.eng-page :is(#scope,#gn-field-food) .scope-body select:focus-visible,.eng-page :is(#scope,#gn-field-food) .wire-zoom:focus-visible{outline:3px solid #537732;outline-offset:3px}
+@media(max-width:700px){
+ .eng-page :is(#scope,#gn-field-food) .eng-scope-panels{min-height:420px;overflow:visible}
+ .eng-page :is(#scope,#gn-field-food) .scope-figure{padding:58px 8px 230px;border-radius:8px;overflow:hidden}
+ .eng-page :is(#scope,#gn-field-food) .scope-body{grid-template-columns:1fr;gap:14px;padding:18px;position:relative;border-radius:0 0 8px 8px}
+ .eng-page :is(#scope,#gn-field-food) .scope-body>div:not(.eng-juice-controls){grid-column:1;grid-row:2}
+ .eng-page :is(#scope,#gn-field-food) .scope-body>.eng-detail-select{font-size:16px}
+ .eng-page :is(#scope,#gn-field-food) .scope-body p,.eng-page :is(#scope,#gn-field-food) .scope-body .eng-fit-panel>span{font-size:15px;line-height:1.5}
+ .eng-page :is(#scope,#gn-field-food) .wire-stages{max-width:65%;padding:10px;font-size:9px}
+ .eng-page :is(#scope,#gn-field-food) .wire-zoom{max-width:32%;inset:8px 8px auto auto;font-size:10px;padding:7px}
+}
+@media(prefers-reduced-motion:reduce){.eng-page :is(#scope,#gn-field-food) *{scroll-behavior:auto}}
+@media print{.eng-page :is(#scope,#gn-field-food) .eng-scope-panels{display:block}.eng-page :is(#scope,#gn-field-food) .scope-figure{padding:0}.eng-page :is(#scope,#gn-field-food) .scope-body{display:block}.eng-page :is(#scope,#gn-field-food) .scope-body>div{margin-block:12px}.eng-page :is(#scope,#gn-field-food) .wire-zoom{display:none}}
+/* Reset earlier juice-only framing so all six processes share the same canvas. */
+.eng-page :is(#scope,#gn-field-food) .scope-body>div.eng-juice-controls{display:none}
+.eng-page :is(#scope,#gn-field-food) .scope-body>div:not(.eng-juice-controls){max-width:none;border:0}
+.eng-page :is(#scope,#gn-field-food) .scope-figure{border:0}
+.eng-page :is(#scope,#gn-field-food) .eng-scope-panels{max-width:none}
+.eng-page :is(#scope,#gn-field-food) .wire-zoom{inset-inline-end:12px}

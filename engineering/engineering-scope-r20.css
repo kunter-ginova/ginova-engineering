@@ -1,0 +1,89 @@
+/* R20: artwork begins directly after the accepted introductory sentence. */
+.eng-page :is(#scope,#gn-field-food)>.wrap{max-width:1600px}
+.eng-page :is(#scope,#gn-field-food) .depth-intro{margin:0 0 14px}
+.eng-page :is(#scope,#gn-field-food) .scope-row[open]{border:0;padding:0}
+.eng-page :is(#scope,#gn-field-food) .scope-row summary,.eng-page :is(#scope,#gn-field-food) .wire-stages,.eng-page :is(#scope,#gn-field-food) .wire-zoom{display:none}
+.eng-page :is(#scope,#gn-field-food) .eng-scope-panels{aspect-ratio:2.65/1;min-height:440px;max-width:none;border:0;border-radius:12px;overflow:visible;background:#f3f6ef}
+.eng-page :is(#scope,#gn-field-food) .scope-figure{display:block;position:absolute;inset:0;padding:0!important;margin:0;overflow:hidden;border-radius:12px;background:#f3f6ef}
+.eng-page :is(#scope,#gn-field-food) .process-wireframe{height:100%;width:100%;aspect-ratio:auto;object-fit:contain;background:#f3f6ef}
+.eng-page :is(#scope,#gn-field-food) .scope-body{position:absolute;inset:auto 24px 20px 24px;width:auto;align-self:auto;display:grid;grid-template-columns:minmax(205px,.65fr) minmax(0,1.75fr);gap:24px;padding:14px 18px;border:1px solid #71886666;border-radius:12px;background:#f3f6efde;box-shadow:0 10px 40px #18332213;backdrop-filter:blur(8px);z-index:3}
+.eng-page :is(#scope,#gn-field-food) .scope-body p,.eng-page :is(#scope,#gn-field-food) .scope-body .eng-fit-panel>span{font-size:16px;line-height:1.45}
+.eng-page :is(#scope,#gn-field-food) .eng-process-overlay{position:absolute;inset:16px auto auto 20px;z-index:5;max-width:min(430px,calc(100% - 40px));width:38%;margin:0}
+.eng-page :is(#scope,#gn-field-food) .eng-process-overlay>span{position:absolute;clip-path:inset(50%);height:1px;width:1px;overflow:hidden}
+.eng-page :is(#scope,#gn-field-food) .eng-process-overlay select{width:100%}
+.eng-select-shell{position:relative;min-width:0}
+.eng-page :is(#scope,#gn-field-food) .eng-select-native{position:absolute!important;inset:0!important;opacity:0!important;width:1px!important;height:1px!important;pointer-events:none}
+.eng-select-toggle{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;min-height:48px;border:1px solid #708462;border-radius:9px;padding:12px 16px;background:linear-gradient(135deg,#fdfef9f2,#dfe8d8f0);box-shadow:0 5px 16px #23391e12;color:#243e2c;font:550 15px/1.4 var(--gn-font-sans);text-align:start;cursor:pointer}
+.eng-select-toggle::after{content:'⌄';font-size:22px;line-height:1;transition:transform .2s}
+.eng-select-toggle[aria-expanded=true]::after{transform:rotate(180deg)}
+.eng-select-toggle:focus-visible,.eng-select-option:focus-visible{outline:3px solid #567c34;outline-offset:3px}
+.eng-select-menu{position:absolute;inset:calc(100% + 8px) 0 auto;min-width:100%;max-height:280px;overflow:auto;margin:0;padding:6px;border:1px solid #a2b697;border-radius:12px;background:#f8fbf2;box-shadow:0 18px 50px #1e392b30;z-index:12}
+.scope-body .eng-select-menu{inset:auto 0 calc(100% + 8px)}
+.eng-select-option{display:block;width:100%;border:0;border-radius:7px;padding:11px 12px;font:500 14px/1.35 var(--gn-font-sans);text-align:start;color:#27472f;background:transparent;cursor:pointer}
+.eng-select-option:hover,.eng-select-option[aria-selected=true]{background:#dce8ce}
+.eng-page :is(#scope,#gn-field-food) .scope-body>.eng-select-shell{grid-column:1;grid-row:1;background:none;padding:0;min-height:0;border:0}
+@media(max-width:700px){
+.eng-page :is(#scope,#gn-field-food) .eng-scope-panels{aspect-ratio:auto;min-height:520px}
+.eng-page :is(#scope,#gn-field-food) .process-wireframe{position:absolute;top:35px;height:300px}
+.eng-page :is(#scope,#gn-field-food) .eng-process-overlay{inset:10px 12px auto;width:auto;max-width:none}
+.eng-page :is(#scope,#gn-field-food) .scope-body{inset:auto 10px 12px;width:auto;grid-template-columns:1fr;gap:10px;padding:12px}
+.eng-page :is(#scope,#gn-field-food) .scope-body>div:not(.eng-juice-controls):not(.eng-select-shell){grid-column:1;grid-row:2}
+.eng-page :is(#scope,#gn-field-food) .scope-body p,.eng-page :is(#scope,#gn-field-food) .scope-body .eng-fit-panel>span{font-size:14px;line-height:1.5}
+.eng-select-toggle{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.eng-select-toggle::after{transition:none}}
+.eng-page :is(#scope,#gn-field-food) .scope-body>div.eng-select-shell{grid-column:1;grid-row:1;background:none;padding:0;min-height:0;max-width:none;border:0}
+.eng-source-motion{animation:eng-source-travel 8s linear infinite}
+.eng-source-fork{animation:eng-source-load 3s ease-in-out infinite alternate}
+.eng-source-pulse{animation:eng-source-blink 2s ease-in-out infinite alternate}
+@keyframes eng-source-travel{from{transform:translateX(0)}to{transform:translateX(180px)}}
+@keyframes eng-source-load{from{transform:translateY(0)}to{transform:translateY(-13px)}}
+@keyframes eng-source-blink{from{opacity:.35}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.eng-source-motion,.eng-source-fork,.eng-source-pulse{animation:none}}
+[dir=rtl] .eng-page :is(#scope,#gn-field-food) .eng-process-overlay{inset-inline-start:20px;inset-inline-end:auto}
+.eng-select-option{white-space:normal;overflow-wrap:anywhere}
+.eng-select-toggle{overflow-wrap:anywhere}
+.eng-page :is(#scope,#gn-field-food) .eng-food-boundary{margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;color:#40543c}
+.eng-page :is(#scope,#gn-field-food) .eng-food-boundary p{margin:0;font-size:12px;line-height:1.55}
+.eng-page :is(#scope,#gn-field-food) .eng-food-boundary .eng-crosslinks{grid-column:1/-1;margin:4px 0 0;padding:0;border:0;font-size:12px}
+.eng-source-truck-pass{animation:eng-truck-pass 9s ease-in-out infinite}
+@keyframes eng-truck-pass{0%,15%{transform:translateX(0)}55%{transform:translateX(140px)}85%,100%{transform:translateX(300px)}}
+@media(max-width:700px){.eng-page :is(#scope,#gn-field-food) .eng-food-boundary{grid-template-columns:1fr;gap:10px}}
+@media(prefers-reduced-motion:reduce){.eng-source-truck-pass{animation:none}}
+/* Portaled menus live outside section transforms, isolation, overflow and backdrop filters. */
+.eng-select-menu.eng-select-portal{min-width:0;min-inline-size:0;position:fixed;inset:auto;margin:0;z-index:2147483647;box-sizing:border-box;max-width:calc(100vw - 24px);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 20px 55px #172b3550}
+.eng-select-menu.eng-select-portal[hidden]{display:none!important}
+.eng-select-menu.eng-select-portal::backdrop{background:transparent;pointer-events:none}
+.eng-method-line{margin-top:10px;padding-top:8px;border-top:1px solid #80977a55;display:grid;gap:4px;color:#385138}
+.eng-method-line>[data-method-workflow]{font-size:11px;font-weight:650;letter-spacing:.02em}
+.eng-method-line small{font-size:10px;line-height:1.4;display:block}
+.eng-method-line [data-method-acceptance]{opacity:.85}
+.eng-domain-description{min-width:0}
+/* Compact bottom controls, retaining generous touch targets where needed. */
+.eng-page :is(#scope,#gn-field-food) .scope-body{padding:10px 14px;gap:18px}
+.eng-page :is(#scope,#gn-field-food) .scope-body .eng-select-toggle,.eng-domain-bottom .eng-select-toggle{min-height:36px;padding:7px 11px;font-size:13px;line-height:1.35}
+.eng-page :is(#scope,#gn-field-food) .scope-body p,.eng-page :is(#scope,#gn-field-food) .scope-body .eng-fit-panel>span,.eng-domain-bottom p{font-size:14px;line-height:1.45}
+.eng-select-option{padding:9px 11px;font-size:13px}
+.eng-method-line{margin-top:6px;padding-top:6px;gap:3px}
+.eng-domain-bottom{padding:11px 14px;gap:18px}
+@media(pointer:coarse){.eng-page :is(#scope,#gn-field-food) .scope-body .eng-select-toggle,.eng-domain-bottom .eng-select-toggle,.eng-select-option{min-height:44px}}
+/* One coordinated 16-second illustrative unloading cycle; truck rear faces the forklift. */
+.eng-source-ship-route{offset-path:path("M85 67 L250 67 L415 67 L580 67 L745 67 L910 67 L1080 67");offset-rotate:0deg;animation:eng-ship-ports 24s linear infinite}
+@keyframes eng-ship-ports{0%{offset-distance:0%;opacity:0}4%{opacity:1}96%{opacity:1}100%{offset-distance:100%;opacity:0}}
+.eng-source-truck-reverse{animation:eng-truck-reverse 16s ease-in-out infinite}
+.eng-source-forklift-unload{animation:eng-forklift-unload 16s ease-in-out infinite}
+.eng-source-pallet-unload{animation:eng-pallet-unload 16s ease-in-out infinite}
+@keyframes eng-truck-reverse{0%,10%{transform:translateX(0)}30%,82%{transform:translateX(-60px)}100%{transform:translateX(0)}}
+@keyframes eng-forklift-unload{0%,32%{transform:translateX(0)}48%,58%{transform:translateX(80px)}78%,100%{transform:translateX(0)}}
+@keyframes eng-pallet-unload{0%,10%{transform:translate(0,0);opacity:1}30%,48%{transform:translate(-60px,0);opacity:1}58%{transform:translate(-60px,-5px);opacity:1}78%,92%{transform:translate(-140px,-5px);opacity:1}100%{transform:translate(-140px,-5px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.eng-source-ship-route,.eng-source-truck-reverse,.eng-source-forklift-unload,.eng-source-pallet-unload{animation:none}.eng-source-ship-route{offset-distance:40%}}
+.eng-source-ship-manifest{animation:none;offset-path:none}
+.source-cargo-offload{animation:source-unload 1.6s ease-out both}
+.source-cargo-load{animation:source-load 1.6s ease-in both}
+@keyframes source-unload{from{transform:translate(0,0);opacity:1}to{transform:translate(43px,18px);opacity:0}}
+@keyframes source-load{from{transform:translate(0,0);opacity:1}to{transform:translate(-40px,18px);opacity:0}}
+[data-source-stop]{cursor:pointer}[data-source-stop]:focus rect{stroke-width:3;stroke:#183b29}
+@media(prefers-reduced-motion:reduce){.source-cargo-offload,.source-cargo-load{animation:none;display:none}}
+.source-flow-controls{position:absolute;inset:12px 12px auto auto;display:flex;gap:6px;z-index:4}
+.source-flow-controls button{border:1px solid #92a585;border-radius:5px;background:#f6f8efed;color:#2d4c3a;padding:5px 8px;font:11px var(--gn-font-sans);cursor:pointer}
+@media(max-width:700px){.source-flow-controls{inset:66px 12px auto auto}.source-flow-controls button{font-size:10px;min-height:32px}}

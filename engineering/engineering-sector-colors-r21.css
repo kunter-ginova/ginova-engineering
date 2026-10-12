@@ -1,0 +1,167 @@
+/* R21: the active sector owns the complete chapter palette.
+   engineering-review.js and engineering-islands.js both maintain data-island.
+   Families: food / warm olive; AI, robotics, AR / sage; flight and marine / teal.
+   Load after engineering-islands.css and the shared selector styles. */
+.eng-page #sectors {
+  --island-bg: #e5e7d5;
+  --island-ink: #34442e;
+  --island-accent: #79874f;
+  --island-surface: #f1f2e6;
+  --island-art-hue: 0deg;
+  --island-muted: color-mix(in srgb, var(--island-ink) 94%, var(--island-bg));
+  --island-line: color-mix(in srgb, var(--island-ink) 28%, var(--island-bg));
+  --island-control-line: color-mix(in srgb, var(--island-ink) 65%, var(--island-bg));
+  --island-soft: color-mix(in srgb, var(--island-accent) 16%, var(--island-bg));
+  background: var(--island-bg);
+  color: var(--island-ink);
+  accent-color: var(--island-ink);
+  color-scheme: light;
+}
+
+/* Food: the warm olive anchor of the accepted GiNOVA palette. */
+.eng-page #sectors[data-island="0"] {
+  --island-bg: #e5e7d5;
+  --island-ink: #34442e;
+  --island-accent: #79874f;
+  --island-surface: #f1f2e6;
+  --island-art-hue: 0deg;
+}
+
+/* Digital and automation: three related, recognisable sage ranges. */
+.eng-page #sectors[data-island="1"] {
+  --island-bg: #d8e4de;
+  --island-ink: #25483b;
+  --island-accent: #668d79;
+  --island-surface: #edf3ef;
+  --island-art-hue: 16deg;
+}
+.eng-page #sectors[data-island="2"] {
+  --island-bg: #d1dfd2;
+  --island-ink: #2b4430;
+  --island-accent: #718765;
+  --island-surface: #eaf0e7;
+  --island-art-hue: -6deg;
+}
+.eng-page #sectors[data-island="3"] {
+  --island-bg: #e1e8d9;
+  --island-ink: #374b36;
+  --island-accent: #81956d;
+  --island-surface: #f0f3e9;
+  --island-art-hue: 6deg;
+}
+
+/* Flight and marine: pale air, deeper water, and a blue-green drone range. */
+.eng-page #sectors[data-island="4"] {
+  --island-bg: #dce7e7;
+  --island-ink: #2d4a4b;
+  --island-accent: #718f8d;
+  --island-surface: #edf3f1;
+  --island-art-hue: 49deg;
+}
+.eng-page #sectors[data-island="5"] {
+  --island-bg: #cbded8;
+  --island-ink: #214940;
+  --island-accent: #5c8779;
+  --island-surface: #e6efea;
+  --island-art-hue: 31deg;
+}
+.eng-page #sectors[data-island="6"] {
+  --island-bg: #d2e3e0;
+  --island-ink: #294b46;
+  --island-accent: #678d80;
+  --island-surface: #eaf2ed;
+  --island-art-hue: 37deg;
+}
+
+/* The grid, light wash and artwork halo all draw from the active family. */
+.eng-page #sectors::before {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--island-ink) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--island-ink) 5%, transparent) 1px, transparent 1px),
+    radial-gradient(ellipse at 77% 42%, var(--island-surface), transparent 65%),
+    linear-gradient(125deg, transparent 28%, var(--island-soft));
+  background-size: 64px 64px, 64px 64px, 100% 100%, 100% 100%;
+}
+.eng-page #sectors .eng-island-top,
+.eng-page #sectors .eng-island-technical {
+  border-color: var(--island-line);
+}
+.eng-page #sectors :is(.eyebrow, h2, h3, .eng-island-problem, .eng-island-technical p) {
+  color: var(--island-ink);
+}
+.eng-page #sectors :is(.eng-island-index, .eng-island-label, .eng-island-visual figcaption, .eng-sector-note, .eng-mobile-sector > span) {
+  color: var(--island-muted);
+}
+.eng-page #sectors .eng-sector-note {
+  opacity: 1;
+}
+.eng-page #sectors .eng-island-next {
+  color: var(--island-ink);
+  border-color: var(--island-control-line);
+}
+.eng-page #sectors .eng-island-next:hover {
+  background-color: var(--island-soft);
+  border-color: var(--island-ink);
+}
+.eng-page #sectors .eng-island-orbit {
+  border-color: color-mix(in srgb, var(--island-accent) 48%, transparent);
+  background: radial-gradient(circle, var(--island-surface), transparent 71%);
+}
+.eng-page #sectors .eng-island-orbit::before {
+  border-color: color-mix(in srgb, var(--island-accent) 37%, transparent);
+}
+.eng-page #sectors :is(.eng-island-cross, .eng-island-art-index) {
+  color: var(--island-accent);
+}
+.eng-page #sectors .eng-island-visual img {
+  filter: contrast(1.35) hue-rotate(var(--island-art-hue));
+}
+
+/* Native and enhanced selectors keep the same palette when open and focused. */
+.eng-page #sectors :is(select, .eng-select-toggle) {
+  color: var(--island-ink);
+  background: var(--island-surface);
+  border-color: var(--island-control-line);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--island-ink) 7%, transparent);
+}
+.eng-page #sectors :is(select, .eng-select-toggle):hover {
+  border-color: var(--island-ink);
+}
+.eng-page #sectors :is(option, .eng-select-menu) {
+  color: var(--island-ink);
+  background: var(--island-surface);
+  border-color: var(--island-line);
+}
+.eng-page #sectors .eng-select-menu {
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--island-ink) 18%, transparent);
+}
+.eng-page #sectors .eng-select-option {
+  color: var(--island-ink);
+  background: transparent;
+}
+.eng-page #sectors .eng-select-option:hover {
+  background: var(--island-soft);
+}
+.eng-page #sectors :is(option:checked, .eng-select-option[aria-selected="true"]) {
+  color: var(--island-surface);
+  background: var(--island-ink);
+}
+.eng-page #sectors :focus-visible {
+  outline-color: var(--island-ink);
+}
+.eng-page #sectors ::selection {
+  color: var(--island-surface);
+  background: var(--island-ink);
+}
+
+/* No animated palette changes: selection and reduced-motion remain immediate. */
+@media (prefers-reduced-motion: reduce) {
+  .eng-page #sectors,
+  .eng-page #sectors::before,
+  .eng-page #sectors *,
+  .eng-page #sectors *::before,
+  .eng-page #sectors *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

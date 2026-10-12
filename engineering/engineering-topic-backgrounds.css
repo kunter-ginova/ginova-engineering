@@ -1,0 +1,52 @@
+/* R14: decorative sector drawings; no content, sizing or typography changes. */
+.eng-sector-panel{position:relative;isolation:isolate;background:#fbfcf9;overflow:hidden}
+.eng-sector-panel::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:var(--eng-topic-art);background-repeat:no-repeat;background-size:cover;background-position:center;opacity:.29}
+.eng-sector-panel::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,rgba(251,252,249,.83),rgba(251,252,249,.55) 47%,rgba(251,252,249,.17))}
+.eng-sector-panel[data-topic="0"]{--eng-topic-art:url("../assets/engineering-topics/food.svg")}
+.eng-sector-panel[data-topic="1"]{--eng-topic-art:url("../assets/engineering-topics/ai.svg")}
+.eng-sector-panel[data-topic="2"]{--eng-topic-art:url("../assets/engineering-topics/robotics.svg")}
+.eng-sector-panel[data-topic="3"]{--eng-topic-art:url("../assets/engineering-topics/ar.svg")}
+.eng-sector-panel[data-topic="4"]{--eng-topic-art:url("../assets/engineering-topics/aviation.svg")}
+.eng-sector-panel[data-topic="5"]{--eng-topic-art:url("../assets/engineering-topics/marine.svg")}
+.eng-sector-panel[data-topic="6"]{--eng-topic-art:url("../assets/engineering-topics/drone.svg")}
+/* Separate the people chapter with a deeper tone from the accepted palette. */
+.eng-page .eng-people{background:#ccd8c2}
+.eng-page .eng-people-slide img{border-radius:16px}
+/* All slides share one grid cell, reserving the tallest translated caption.
+   Hidden slides remain inert and aria-hidden; controls no longer jump on selection. */
+.eng-people-stage{display:grid;min-width:0}
+.eng-page .eng-people-stage .eng-people-slide{grid-area:1 / 1;min-width:0}
+.eng-page .eng-people-stage .eng-people-slide[hidden]{display:grid!important;visibility:hidden;pointer-events:none;animation:none}
+@media(max-width:600px){.eng-page .eng-people-stage .eng-people-slide[hidden]{display:block!important}.eng-page .eng-people-slide img{border-radius:12px}.eng-sector-panel::before{background-size:auto 100%;background-position:62% center;opacity:.25}}
+@media print{.eng-sector-panel::before,.eng-sector-panel::after{display:none}.eng-people-stage{display:block}.eng-page .eng-people-stage .eng-people-slide[hidden]{visibility:visible}}
+
+/* R14 amendment: the development concept becomes the fourth existing people scene. */
+.eng-page .eng-people-selectors{width:auto;flex:0 0 auto}
+.eng-people-machine{overflow:hidden;border-radius:16px;background:#d6dfce}
+.eng-page .eng-people-machine img{transform:scale(1.45);transform-origin:45% 64%;object-fit:contain;border-radius:0}
+/* One tone lighter than the preceding people chapter, using the same palette. */
+.eng-page :is(#scope,#gn-field-food){background:#e2eadb}
+.eng-page :is(#scope,#gn-field-food) .scope-row[open]{background:transparent}
+/* Juice drawing spans the full stage. Its complete 3:1 canvas is preserved above
+   an explicitly reserved clear annotation band, so no equipment sits under text. */
+.eng-page #eng-process-3 .eng-scope-panels{display:block;background:#f3f6ef;border:1px solid #c7d1bf;overflow:hidden}
+.eng-page #eng-process-3 .scope-figure{border:0;background:transparent;margin:0}
+.eng-page #eng-process-3 .process-wireframe{display:block;width:100%;height:auto;max-height:none;aspect-ratio:3/1;object-fit:contain}
+.eng-page #eng-process-3 .wire-stages{padding:4px 18px;font-size:11px;line-height:1.4}
+.eng-page #eng-process-3 .wire-zoom{position:absolute;inset-inline-end:18px;bottom:16px;background:#f3f6ef}
+.eng-page #eng-process-3 .eng-scope-panels{position:relative}
+.eng-page #eng-process-3 .scope-body{width:100%;padding:10px 18px 18px;background:#f3f6ef}
+.eng-page #eng-process-3 .scope-body>div:not(.eng-juice-controls){padding:12px 16px;min-height:108px;max-width:76%;background:#e5ecde;border:1px solid #c7d1bf}
+.eng-page #eng-process-3 .scope-body>div.eng-juice-controls{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 8px;min-height:0;background:transparent}
+.eng-juice-controls button{border:1px solid #a9b99b;background:transparent;color:#344b36;padding:8px 10px;font:500 13px/1.3 var(--gn-font-sans);cursor:pointer;text-align:start}
+.eng-juice-controls button[aria-pressed=true]{background:#344b36;color:#fff;border-color:#344b36}
+.eng-juice-controls button:focus-visible{outline:3px solid #526b42;outline-offset:3px}
+.eng-page #eng-process-3 .scope-body p,.eng-page #eng-process-3 .scope-body .eng-fit-panel>span{font-size:16px;line-height:1.5;margin:0}
+@media(min-width:901px) and (max-height:800px){.eng-page #eng-process-3 .eng-scope-panels{max-width:1050px;margin-inline:auto}.eng-page #eng-process-3 .scope-body>div:not(.eng-juice-controls){min-height:90px}}
+@media(max-width:600px){.eng-people-machine{border-radius:12px}.eng-page #eng-process-3 .wire-stages{display:none}.eng-page #eng-process-3 .scope-body{padding:10px 12px 12px}.eng-page #eng-process-3 .scope-body>div:not(.eng-juice-controls){max-width:none;min-height:150px;padding:12px}.eng-page #eng-process-3 .wire-zoom{position:static;margin:4px 12px 0}.eng-juice-controls button{flex:1 1 40%;min-height:38px}.eng-page #eng-process-3 .scope-body p,.eng-page #eng-process-3 .scope-body .eng-fit-panel>span{font-size:15px;line-height:1.5}}
+
+.eng-people-scope-note{margin:12px 0 0;color:#40553e;font-size:13px;line-height:1.5}
+@media(max-width:400px){.eng-page .eng-people-buttons{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}.eng-page .eng-people-selectors{grid-column:1/-1;grid-row:1;justify-content:center;gap:6px}.eng-page [data-eng-prev]{grid-column:1;grid-row:2}.eng-page [data-eng-next]{grid-column:2;grid-row:2;justify-self:end}}
+
+/* Owner-selected scientific-nutrition concept illustration, kept whole. */
+.eng-page .eng-people-innovation img{object-fit:contain;background:#e8dfca}
