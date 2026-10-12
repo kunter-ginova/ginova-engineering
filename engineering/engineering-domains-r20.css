@@ -1,0 +1,43 @@
+.eng-page>.eng-domain-scene{background:#e5ebdc;min-height:calc(100svh - 100px);height:auto;padding:40px 0!important;align-items:center}
+.eng-domain-scene>.wrap{width:100%;max-width:1600px}
+.eng-domain-heading h2{font-size:clamp(36px,4vw,64px);margin:8px 0 10px}
+.eng-domain-heading>p{font-size:19px;line-height:1.5;max-width:60ch}
+.eng-domain-canvas{position:relative;min-height:490px;background:#f3f6ef;border-radius:12px;overflow:visible}
+.eng-domain-canvas>svg{position:absolute;inset:0;width:100%;height:100%}
+.eng-domain-bottom{position:absolute;inset:auto 24px 45px;display:grid;grid-template-columns:minmax(200px,.65fr) minmax(0,1.75fr);align-items:center;gap:24px;padding:16px 20px;background:#f3f6efdf;backdrop-filter:blur(8px);border:1px solid #6c846e66;border-radius:12px;z-index:2}
+.eng-domain-bottom p{font-size:16px;line-height:1.5;margin:0}
+.eng-domain-note{position:absolute;inset:auto 24px 15px;font-size:11px;color:#49614d}
+.eng-domain-bottom .eng-select-menu{inset:auto 0 calc(100% + 8px)}
+.eng-domain-scene .eng-select-native{position:absolute!important;opacity:0;pointer-events:none;width:1px;height:1px}
+@media(max-width:700px){.eng-domain-canvas{min-height:490px}.eng-domain-canvas>svg{height:320px}.eng-domain-bottom{inset:auto 12px 50px;grid-template-columns:1fr;gap:12px;padding:14px}.eng-domain-bottom p{font-size:14px}.eng-domain-note{inset:auto 15px 12px;font-size:10px}.eng-domain-heading>p{font-size:16px}}
+/* Entire chapters carry related but visibly distinct engineering colour families. */
+.eng-domain-scene[data-domain=robotics]{--domain-bg:#24463c;--domain-ink:#eef4e8;--domain-muted:#cfdfcd}
+.eng-domain-scene[data-domain=ai]{--domain-bg:#264742;--domain-ink:#edf5ee;--domain-muted:#cde0d7}
+.eng-domain-scene[data-domain=ar]{--domain-bg:#e3e8d7;--domain-ink:#294535;--domain-muted:#415a49}
+.eng-domain-scene[data-domain=aviation]{--domain-bg:#203e4a;--domain-ink:#edf5f2;--domain-muted:#ccdde0}
+.eng-domain-scene[data-domain=marine]{--domain-bg:#31594f;--domain-ink:#edf4e9;--domain-muted:#d0e0d3}
+.eng-domain-scene[data-domain=drones]{--domain-bg:#d4e3dd;--domain-ink:#274a44;--domain-muted:#42615b}
+.eng-page>.eng-domain-scene{background:var(--domain-bg)!important;color:var(--domain-ink);transition:background-color .35s}
+.eng-page .eng-domain-scene h2,.eng-domain-heading .eyebrow{color:var(--domain-ink)}
+.eng-domain-heading>p{color:var(--domain-muted)}
+.eng-domain-canvas{min-height:600px;background:#e6ebdf}
+.eng-domain-canvas>svg{width:100%;height:100%;object-fit:contain}
+.eng-domain-bottom,.eng-domain-note{color:#243e31}
+.eng-page #method{height:auto;min-height:var(--eng-review-space)}
+.eng-blueprint-poster{margin:22px 0 0;width:100%;max-width:1200px}
+.eng-blueprint-poster img{display:block;width:100%;height:auto;object-fit:contain;border-radius:8px}
+@media(max-width:700px){.eng-domain-canvas{min-height:520px}.eng-domain-canvas>svg{height:340px}.eng-blueprint-poster{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.eng-page>.eng-domain-scene{transition:none}}
+/* Blueprint is the chapter backdrop, not a separate block below the copy. */
+.eng-page #method{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;height:auto;min-height:var(--eng-review-space);background:#2b4438}
+.eng-page #method>.eng-method-backdrop{position:absolute;inset:0;z-index:0;width:100%;height:100%;max-width:none;margin:0;pointer-events:none}
+.eng-page #method>.eng-method-backdrop img{width:100%;height:100%;object-fit:contain;object-position:center bottom;border-radius:0}
+.eng-page #method::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#102b22f2 0%,#18392bb8 26%,#203d291f 50%,transparent 65%)}
+.eng-page #method>.wrap{position:relative;z-index:2}
+.eng-page #method .eng-method-head h2{max-width:none;width:auto;font-size:clamp(25px,2.8vw,38px);line-height:1.12;margin:0 0 14px;text-wrap:balance;color:#f2f5e8;text-shadow:0 1px 10px #132c22}
+.eng-page #method .eng-method-head .eng-panel-label{max-width:320px;margin:10px 0 12px}
+.eng-page #method .eng-method-panel>div>p{max-width:76ch;font-size:16px;line-height:1.5;margin:0 0 10px;color:#f2f5eb;text-shadow:0 1px 8px #132c22}
+.eng-page #method .eng-method-panel .eng-situations{background:#254638e8;border-radius:10px}
+.eng-page #method .eng-method-panel .eng-hero-process{background:#eef2e7e8}
+@media(max-width:700px){.eng-page #method{min-height:620px}.eng-page #method .eng-method-head h2{font-size:25px;line-height:1.18;text-wrap:pretty}.eng-page #method::after{background:linear-gradient(180deg,#102b22f2 0%,#18392bd9 40%,#203d294d 65%,transparent 85%)}.eng-page #method .eng-method-panel>div>p{font-size:15px}}
+.eng-page #method .eng-method-panel>div>p{width:fit-content;padding:6px 10px;border-radius:5px;background:#173827df;box-shadow:0 4px 16px #0e241622}
