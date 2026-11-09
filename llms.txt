@@ -1,0 +1,49 @@
+# GiNOVA Engineering
+
+> Scoped technical studies for process analysis, capacity assessment and equipment decisions.
+
+## Processes
+
+- **Sourcing and supply-flow coordination**: An international ingredient or intermediate-product requirement with several producer or processing options.
+- **Salad and fresh-cut processing**: A new or upgraded salad and fresh-cut line where quality and handling constraints must guide equipment selection.
+- **Drying and dehydration**: A drying investment or product change that needs a product-specific route and trial plan.
+- **Juice processes**: A juice line or product brief where yield, pulp, preservation and filling choices must be aligned.
+- **Product and process development**: A new formulation or process change moving from a concept into structured trials.
+- **Feasibility and implementation support**: An investment or implementation decision with competing supplier scopes and unresolved site interfaces.
+- **Total Quality Management**: A production system with fragmented controls, weak evidence or recurring quality losses.
+
+## Plant agents (in development)
+
+An agent is only as good as the map under it. We draw the process first, then connect your documents and records to it. The agent advises; a named person decides.
+
+- **Specification agent**: Turns a purchasing need into a technical enquiry and compares supplier answers against shared criteria.
+- **Deviation agent**: Reads batch records, control limits and maintenance notes, then drafts the likely cause and next step, with sources.
+- **Audit evidence agent**: Gathers the records an audit will ask for and shows what is missing before the auditor does.
+- **Shift assistant**: Answers operators from approved procedures, in their own language, and cites the page.
+
+Agents read and advise. They do not write to control systems.
+
+## First step
+
+Each engagement starts with a written scope: inputs, deliverables, responsibilities, timing, price and acceptance criteria. Examples describe scope, not promised results.
+
+## Pages
+
+- [en](https://engineering.ginova.net/)
+- [it](https://engineering.ginova.net/it/)
+- [de](https://engineering.ginova.net/de/)
+- [es](https://engineering.ginova.net/es/)
+- [tr](https://engineering.ginova.net/tr/)
+- [az](https://engineering.ginova.net/az/)
+- [ar](https://engineering.ginova.net/ar/)
+- [zh](https://engineering.ginova.net/zh/)
+
+## GiNOVA sites
+
+- [Engineering](https://engineering.ginova.net/): Production systems, feasibility, and product and process development, including food.
+- [Decision Systems](https://consultancy.ginova.net/): Consulting, data and AI: one decision question, a fixed fee, one Investment Decision File.
+- [MediaLab™](https://medialab.ginova.net/): Web, film, sound and brand communication, made to commission.
+
+## Contact
+
+satis@ginova.org
