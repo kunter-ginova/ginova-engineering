@@ -1,0 +1,131 @@
+/* GiNOVA Engineering: the steel card, amber accent from the gate art */
+:root{--blue:#142a34;--blue-hi:#1d3a47;--blue-lo:#0d1d25}
+.field span,.cur.home span{color:rgba(255,179,71,.2)}
+.sheet{border-top-color:#c9862b}
+.s-alt{--bg:var(--paper-2)}
+.filmchip .thumb{background-image:url(media/engineering.jpg)}
+
+/* process charts */
+.s-proc h2{max-width:none;font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.08}
+.s-proc .lede{margin-top:8px;font-size:1rem}
+.proc-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.proc-tabs button{width:auto;padding:8px 14px;font:500 .9rem/1.2 var(--sans);border-radius:var(--r-s)}
+.chart{margin-top:12px}
+.chart[hidden]{display:none}
+.chart figure{margin:0;background:#fff;border:1px solid var(--edge);border-radius:var(--r-m);overflow:hidden}
+.chart-scroll{overflow-x:auto;background:#f3f6ef}
+.chart-scroll:focus-visible{outline:3px solid #c9862b;outline-offset:-3px}
+.chart svg{display:block;width:100%;height:auto;direction:ltr}
+.chart text{font-family:var(--sans)}
+.chart-dark .chart-scroll{background:#112128}
+.stages{list-style:none;margin:0;padding:8px 16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-top:1px solid var(--edge);font-size:.8rem;line-height:1.3;color:var(--ink-2)}
+.chart-sub{margin:0;padding:8px 16px;border-top:1px solid var(--edge);font-size:.8rem;line-height:1.3;color:var(--ink-2)}
+.chart-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:8px}
+.chart-note{margin:0;font-size:.74rem;line-height:1.35;color:var(--ink-2)}
+.chart-ctl{display:flex;gap:6px;flex:none}
+.chart-ctl button{padding:6px 11px;background:#fff;border:1px solid var(--edge);border-radius:var(--r-s);color:var(--ink);font:500 .76rem/1.2 var(--sans);cursor:pointer}
+.chart-ctl button:hover{border-color:var(--brass)}
+.chart-ctl button[hidden]{display:none}
+#processes .sheet.tabpanel{margin-bottom:0}
+
+/* drawings in motion, only while the section is on screen */
+@keyframes wire-flow{to{stroke-dashoffset:-76}}
+@keyframes wire-roll{to{stroke-dashoffset:-11.3}}
+@keyframes wire-fan{to{transform:rotate(360deg)}}
+.chart .flow-path{animation:wire-flow 5s linear infinite}
+.chart .conveyor-rollers circle{stroke-dasharray:3 2.65;animation:wire-roll 1.4s linear infinite}
+.chart .process-fan{transform-box:fill-box;transform-origin:center;animation:wire-fan 3.2s linear infinite}
+@keyframes eng-source-blink{from{opacity:.35}to{opacity:1}}
+@keyframes eng-truck-reverse{0%,10%{transform:translateX(0)}30%,82%{transform:translateX(-60px)}100%{transform:translateX(0)}}
+@keyframes eng-forklift-unload{0%,32%{transform:translateX(0)}48%,58%{transform:translateX(80px)}78%,100%{transform:translateX(0)}}
+@keyframes eng-pallet-unload{0%,10%{transform:translate(0,0);opacity:1}30%,48%{transform:translate(-60px,0);opacity:1}58%{transform:translate(-60px,-5px);opacity:1}78%,92%{transform:translate(-140px,-5px);opacity:1}100%{transform:translate(-140px,-5px);opacity:0}}
+@keyframes source-unload{from{transform:translate(0,0);opacity:1}to{transform:translate(43px,18px);opacity:0}}
+@keyframes source-load{from{transform:translate(0,0);opacity:1}to{transform:translate(-40px,18px);opacity:0}}
+.eng-source-pulse{animation:eng-source-blink 2s ease-in-out infinite alternate}
+.eng-source-truck-reverse{animation:eng-truck-reverse 16s ease-in-out infinite}
+.eng-source-forklift-unload{animation:eng-forklift-unload 16s ease-in-out infinite}
+.eng-source-pallet-unload{animation:eng-pallet-unload 16s ease-in-out infinite}
+.source-cargo-offload{animation:source-unload 1.6s ease-out both}
+.source-cargo-load{animation:source-load 1.6s ease-in both}
+.quality-batch{offset-path:path("M100 135 L360 135 L620 135 L880 135 L880 290");animation:quality-batch-flow 24s linear infinite}
+.quality-feedback{animation:quality-feedback-flow 24s linear infinite}
+@keyframes quality-batch-flow{0%,8%{offset-distance:0%;opacity:0}12%{offset-distance:0%;opacity:1}50%{offset-distance:100%;fill:#f3c775;opacity:1}95%{offset-distance:100%;fill:#f3c775;opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes quality-feedback-flow{0%,55%{stroke-dashoffset:400;opacity:.15}70%{opacity:1}100%{stroke-dashoffset:0;opacity:.8}}
+#processes :is(.flow-path,.conveyor-rollers circle,.process-fan,.eng-source-pulse,.eng-source-truck-reverse,.eng-source-forklift-unload,.eng-source-pallet-unload,.quality-batch,.quality-feedback){animation-play-state:paused}
+#processes.in-view:not(.motion-off) :is(.flow-path,.conveyor-rollers circle,.process-fan,.eng-source-pulse,.eng-source-truck-reverse,.eng-source-forklift-unload,.eng-source-pallet-unload,.quality-batch,.quality-feedback){animation-play-state:running}
+@media(prefers-reduced-motion:reduce){
+  .chart-ctl{display:none}
+  .chart .flow-path,.chart .conveyor-rollers circle,.chart .process-fan,.eng-source-pulse,.eng-source-truck-reverse,.eng-source-forklift-unload,.eng-source-pallet-unload{animation:none}
+  .source-cargo-offload,.source-cargo-load{animation:none;display:none}
+  .quality-batch{animation:none;offset-distance:100%;fill:#f3c775}
+  .quality-feedback{animation:none;opacity:1}
+}
+
+/* plant agents */
+.s-agents h2{max-width:22ch;font-size:clamp(1.9rem,3.2vw,2.9rem);line-height:1.08}
+.agents{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.agents li{display:block;margin:0;padding:13px 16px;background:#fff;border:1px solid var(--edge);border-radius:var(--r-m)}
+.agents h3{margin:0 0 3px;font:500 1.08rem/1.25 var(--serif)}
+.agents p{margin:0;font-size:.88rem;line-height:1.42;color:var(--ink-2)}
+.ag-rule{margin:14px 0 0;padding-inline-start:12px;border-inline-start:3px solid #c9862b;font-weight:600;font-size:.95rem;line-height:1.4}
+.s-agents .actions{margin-top:14px}
+.scenario{margin-bottom:0}
+.scenario ol{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--line)}
+.scenario li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;margin:0;padding:9px 0;border-bottom:1px solid var(--line);font-size:.88rem;line-height:1.42}
+.scenario li:last-child{border-bottom:0}
+.scenario time{font-weight:600;font-size:.8rem;color:var(--brass);padding-top:2px}
+.sc-foot{margin:10px 0 0!important;font-size:.76rem!important;color:var(--ink-2)}
+
+@media(max-width:1100px){.chart-foot{align-items:flex-start;flex-direction:column}}
+@media(max-width:760px){
+  .chart svg{min-width:760px}
+  .stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agents{grid-template-columns:1fr}
+}
+
+/* ---------- Clear limits: all-white panel, scattered scenes, one hazy-green offer ---------- */
+.s-limits{--bg:#fff}
+.s-limits .limits-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(28px,4vw,64px)}
+.s-limits h2{max-width:13ch}
+.spec{position:relative;isolation:isolate;margin-top:26px;padding:24px 26px 26px;border-radius:var(--r-m);border:1px solid rgba(17,75,64,.14);
+  background:radial-gradient(90% 130% at 8% 0%,rgba(146,196,168,.55),transparent 62%),radial-gradient(80% 110% at 100% 100%,rgba(108,168,138,.34),transparent 66%),#e6f0ea}
+.spec::before{content:"";position:absolute;z-index:-1;inset:-16px;border-radius:calc(var(--r-m) + 16px);background:radial-gradient(70% 70% at 50% 50%,rgba(128,184,152,.34),transparent 72%);filter:blur(16px)}
+.spec h3{margin:0 0 8px;font:500 clamp(1.35rem,1.9vw,1.75rem)/1.12 var(--serif);color:var(--ink)}
+.spec p{margin:0 0 8px;font-size:.98rem;line-height:1.5;color:var(--ink)}
+.spec .spec-note{margin-bottom:18px;font-size:.88rem;color:var(--ink-2)}
+.lim-side{display:grid;gap:22px}
+.scatter{position:relative;height:clamp(290px,27vw,350px)}
+.sc{position:absolute;margin:0;overflow:hidden;border-radius:var(--r-s);border:1px solid var(--edge);background:#fff;box-shadow:0 10px 24px -14px rgba(16,33,31,.35)}
+.sc img{display:block;width:100%;height:auto}
+.sc1{inset-inline-start:0;top:8%;width:46%;transform:rotate(-2.2deg);z-index:2}
+.sc2{inset-inline-start:41%;top:0;width:36%;transform:rotate(1.6deg);z-index:1}
+.sc3{inset-inline-end:0;top:30%;width:43%;transform:rotate(-1deg);z-index:3}
+.sc4{inset-inline-start:7%;top:55%;width:38%;transform:rotate(2deg);z-index:1}
+.sc5{inset-inline-start:42%;top:62%;width:30%;transform:rotate(-1.6deg);z-index:2}
+.s-limits .rules{gap:0}
+.s-limits .rules li{padding:11px 0;font-size:.9rem;line-height:1.5;background:none;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none}
+@media(max-width:900px){
+  .s-limits .limits-grid{grid-template-columns:1fr}
+  .scatter{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .sc{position:relative;inset:auto;width:auto}
+  .sc2,.sc4{margin-top:18px}
+  .sc5{grid-column:1/-1;width:60%;justify-self:center}
+}
+
+
+/* opening: the blueprint desk photograph from the original Engineering site's "One specification" section, fading into the pale panel */
+.hero-art{position:absolute;z-index:0;top:var(--hdr);bottom:var(--inset);left:calc(var(--inset) + 28%);right:var(--fw);overflow:hidden;border-radius:0 var(--r-l) var(--r-l) 0;pointer-events:none}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fbfcfa 0%,rgba(251,252,250,.97) 16%,rgba(251,252,250,.78) 34%,rgba(251,252,250,.3) 56%,rgba(251,252,250,0) 78%),linear-gradient(0deg,rgba(251,252,250,.75),rgba(251,252,250,0) 30%),linear-gradient(180deg,rgba(226,234,219,.45),rgba(226,234,219,0) 38%)}
+[dir=rtl] .hero-art{left:var(--fw);right:calc(var(--inset) + 28%);border-radius:var(--r-l) 0 0 var(--r-l)}
+[dir=rtl] .hero-art::after{background:linear-gradient(270deg,#fbfcfa 0%,rgba(251,252,250,.97) 16%,rgba(251,252,250,.78) 34%,rgba(251,252,250,.3) 56%,rgba(251,252,250,0) 78%),linear-gradient(0deg,rgba(251,252,250,.75),rgba(251,252,250,0) 30%),linear-gradient(180deg,rgba(226,234,219,.45),rgba(226,234,219,0) 38%)}
+@media(max-width:1100px){.hero-art,[dir=rtl] .hero-art{left:var(--inset);right:var(--inset);border-radius:var(--r-l)}.hero-art img{object-position:70% 50%;opacity:.3}}
+
+/* closing screen: gate art from the ginova.org home (the same scene as the site's gate), dimmed behind the enquiry */
+.s-start{--bg:#0d1d25}
+.s-start::before{background:linear-gradient(90deg,rgba(13,29,37,.97) 0%,rgba(13,29,37,.86) 40%,rgba(13,29,37,.5) 100%),url(chrome/pop-engineering.svg) right center/auto 130% no-repeat,#0d1d25}
+[dir=rtl] .s-start::before{background:linear-gradient(270deg,rgba(13,29,37,.97) 0%,rgba(13,29,37,.86) 40%,rgba(13,29,37,.5) 100%),url(chrome/pop-engineering.svg) left center/auto 130% no-repeat,#0d1d25}
+
+/* the offer is now the heading of this screen */
+.s-limits .spec{margin-top:0}
+.s-limits .spec h2.spec-h{margin:0 0 10px;max-width:none;font:500 clamp(1.7rem,2.6vw,2.4rem)/1.1 var(--serif);color:var(--ink)}
